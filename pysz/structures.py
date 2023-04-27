@@ -1,13 +1,8 @@
-from abc import ABC, abstractmethod
-import numpy as np
-import scipy
-from astropy import cosmology
-from astropy import constants
-from astropy import units as u
-from numba import njit, jit, prange
+from .imports import *
 
 class StructureModel(ABC):
-    def logScaleByMass(self, alpha, beta, M):
+    @staticmethod
+    def logScaleByMass(alpha, beta, M):
         return (10**beta)*(M/u.M_sun)**alpha
 
 class FilamentModel(StructureModel):

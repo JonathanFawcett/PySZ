@@ -1,14 +1,8 @@
-from abc import ABC, abstractmethod
-import numpy as np
-import scipy
-from astropy import cosmology
-from astropy import constants
-from astropy import units as u
-from numba import njit, jit, prange
+from .imports import *
 
-from .integrators import *
-from .structure_models import *
-from .mass_distributions import *
+from . import integrators
+from . import structures
+from . import distributions
 
 class SZCalculator(ABC):
     sigma_T = constants.sigma_T
@@ -20,7 +14,9 @@ class SZCalculator(ABC):
         pass
 
 class GeneralSZCalculator(SZCalculator):
-    def __init__(self, integrator: Integrator, cosmology_model: cosmology.FLRW, cluster_model: ClusterModel,
+    def __init__(self, integrator: integrators.Integrator,
+                 cosmology_model: cosmology.FLRW,
+                 cluster_model: structures.ClusterModel,
                  R_min = 1e-5, R_max = 5, num_pts: int = 100):
         self.integrator = integrator
         self.cosmology_model = cosmology_model
@@ -42,7 +38,9 @@ class GeneralSZCalculator(SZCalculator):
 
 class GaussianFilamentSZCalculator(SZCalculator):
 
-    def __init__(self, integrator: Integrator, cosmology_model: cosmology.FLRW, filament_model: FilamentModel,
+    def __init__(self, integrator: integrators.Integrator,
+                 cosmology_model: cosmology.FLRW,
+                 filament_model: structures.FilamentModel,
                  A_1: u.Quantity = 1.2e-5*u.keV*u.cm**-3, A_2: u.Quantity = 2.66e-5*u.keV*u.cm**-3, 
                  c_1=0.5186, c_2=0.1894, 
                  theta_min: u.Quantity = 0*u.rad, theta_max: u.Quantity = np.pi*u.rad, 
@@ -94,7 +92,9 @@ class GaussianFilamentSZCalculator(SZCalculator):
         return k**2 * ((np.cos(phi)*np.cos(theta))**2 + np.sin(theta)**2 + np.cos(phi)**2)
 
 class MassCalculator:
-    def __init__(self, mass_model: MassDistributionModel, sz_calc: SZCalculator, integrator: Integrator,
+    def __init__(self, mass_model: distributions.MassDistributionModel,
+                 sz_calc: SZCalculator,
+                 integrator: integrators.Integrator,
                  M_min: u.Quantity = 1e11*u.M_sun, M_max: u.Quantity = 1e16*u.M_sun,
                  num_pts: int = 1000, dist='log'):
         self.mass_model = mass_model
@@ -123,7 +123,9 @@ class MassCalculator:
         return integ
 
 class LineOfSightCalculator:
-    def __init__(self, cosmology_model: cosmology.FLRW, mass_calc: MassCalculator, integrator: Integrator,
+    def __init__(self, cosmology_model: cosmology.FLRW,
+                 mass_calc: MassCalculator,
+                 integrator: integrators.Integrator,
                  z_min: u.Quantity = 1e-6, z_max: u.Quantity = 5,
                  num_pts: int = 100, dist = 'log'):
         self.cosmology_model = cosmology_model

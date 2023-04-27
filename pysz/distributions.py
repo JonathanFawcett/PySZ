@@ -1,10 +1,4 @@
-from abc import ABC, abstractmethod
-import numpy as np
-import scipy
-from astropy import cosmology
-from astropy import constants
-from astropy import units as u
-from numba import njit, jit, prange
+from .imports import *
 
 class MassDistributionModel(ABC):
     def getMassDistribution(self, z, M):
@@ -112,8 +106,10 @@ class MassDistributionTinker(MassDistributionModel):
         sigma = self.sigma_model.getSigma(z, M)
         mean_density = self.cosmology_model.critical_density(z)*self.cosmology_model.Om(z) # From Tinker Eq. 1
         # return self.f(sigma) * mean_density/(M*constants.M_sun) * self.sigma_model.getSigmaDeriv(M)
-        return self.f(sigma) * mean_density/M * self.sigma_model.getSigmaDeriv(M)
-
-    def f(self, sigma):
+        return self.f(sigma.value, self.A, self.a, self.b, self.c) * mean_density/M * self.sigma_model.getSigmaDeriv(M)
+    
+    @staticmethod
+    @njit
+    def f(sigma:float, A:float, a:float, b:float, c:float):
         # From Tinker, Eq. 3
-        return self.A*((sigma/self.b)**(-self.a)+1)*np.exp(-self.c/sigma**2)
+        return A*((sigma/b)**(-a)+1)*np.exp(-c/sigma**2)
