@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Python: module pysz.integrators</title>
+</head><body>
+
+<table class="heading">
+<tr class="heading-text decor">
+<td class="title">&nbsp;<br><strong class="title"><a href="pysz.html" class="white">pysz</a>.integrators</strong></td>
+<td class="extra"><a href=".">index</a><br><a href="file:..%5Cpysz%5Cintegrators.py">..\pysz\integrators.py</a></td></tr></table>
+    <p><span class="code">#&nbsp;This&nbsp;module&nbsp;includes&nbsp;the&nbsp;integrator&nbsp;classes&nbsp;that&nbsp;calculate&nbsp;the&nbsp;many&nbsp;integrals,&nbsp;optimized&nbsp;for&nbsp;speed&nbsp;or&nbsp;precision</span></p>
+<p>
+<table class="section">
+<tr class="decor pkg-content-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Modules</strong></td></tr>
+    
+<tr><td class="decor pkg-content-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><table><tr><td class="multicolumn"><a href="astropy.constants.html">astropy.constants</a><br>
+<a href="astropy.cosmology.html">astropy.cosmology</a><br>
+</td><td class="multicolumn"><a href="numpy.html">numpy</a><br>
+<a href="scipy.html">scipy</a><br>
+</td><td class="multicolumn"><a href="astropy.units.html">astropy.units</a><br>
+</td><td class="multicolumn"></td></tr></table></td></tr></table><p>
+<table class="section">
+<tr class="decor index-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Classes</strong></td></tr>
+    
+<tr><td class="decor index-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><dl>
+<dt class="heading-text"><a href="abc.html#ABC">abc.ABC</a>(<a href="builtins.html#object">builtins.object</a>)
+</dt><dd>
+<dl>
+<dt class="heading-text"><a href="pysz.integrators.html#Integrator">Integrator</a>
+</dt><dd>
+<dl>
+<dt class="heading-text"><a href="pysz.integrators.html#IntegratorSciPy">IntegratorSciPy</a>
+</dt><dt class="heading-text"><a href="pysz.integrators.html#IntegratorTrapezoid">IntegratorTrapezoid</a>
+</dt></dl>
+</dd>
+</dl>
+</dd>
+</dl>
+ <p>
+<table class="section">
+<tr class="decor title-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><a name="Integrator">class <strong>Integrator</strong></a>(<a href="abc.html#ABC">abc.ABC</a>)</td></tr>
+    
+<tr><td class="decor title-decor" rowspan=2><span class="code">&nbsp;&nbsp;&nbsp;</span></td>
+<td class="decor title-decor" colspan=2><span class="code">Abstract&nbsp;class&nbsp;to&nbsp;integrate&nbsp;a&nbsp;function&nbsp;between&nbsp;2&nbsp;points<br>&nbsp;</span></td></tr>
+<tr><td>&nbsp;</td>
+<td class="singlecolumn"><dl><dt>Method resolution order:</dt>
+<dd><a href="pysz.integrators.html#Integrator">Integrator</a></dd>
+<dd><a href="abc.html#ABC">abc.ABC</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="Integrator-__call__"><strong>__call__</strong></a>(self, func, x_min, x_max)</dt><dd><span class="code">Abstract&nbsp;class&nbsp;to&nbsp;integrate&nbsp;a&nbsp;function&nbsp;between&nbsp;2&nbsp;points<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;func&nbsp;(Callable):&nbsp;Callable&nbsp;function&nbsp;to&nbsp;integrate<br>
+&nbsp;&nbsp;&nbsp;&nbsp;x_min&nbsp;(Any):&nbsp;Lower&nbsp;bound&nbsp;of&nbsp;integral<br>
+&nbsp;&nbsp;&nbsp;&nbsp;x_max&nbsp;(Any):&nbsp;Upper&nbsp;bound&nbsp;of&nbsp;integral<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Any:&nbsp;Result&nbsp;of&nbsp;integral</span></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><span class="code">dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</span></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><span class="code">list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</span></dd>
+</dl>
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>__abstractmethods__</strong> = frozenset({'__call__'})</dl>
+
+</td></tr></table> <p>
+<table class="section">
+<tr class="decor title-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><a name="IntegratorSciPy">class <strong>IntegratorSciPy</strong></a>(<a href="pysz.integrators.html#Integrator">Integrator</a>)</td></tr>
+    
+<tr><td class="decor title-decor" rowspan=2><span class="code">&nbsp;&nbsp;&nbsp;</span></td>
+<td class="decor title-decor" colspan=2><span class="code"><a href="#Integrator">Integrator</a>&nbsp;wrapping&nbsp;SciPy's&nbsp;integrate.quad&nbsp;function<br>&nbsp;</span></td></tr>
+<tr><td>&nbsp;</td>
+<td class="singlecolumn"><dl><dt>Method resolution order:</dt>
+<dd><a href="pysz.integrators.html#IntegratorSciPy">IntegratorSciPy</a></dd>
+<dd><a href="pysz.integrators.html#Integrator">Integrator</a></dd>
+<dd><a href="abc.html#ABC">abc.ABC</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Static methods defined here:<br>
+<dl><dt><a name="IntegratorSciPy-__call__"><strong>__call__</strong></a>(func, x_min: astropy.units.quantity.Quantity, x_max: astropy.units.quantity.Quantity)</dt><dd><span class="code"><a href="#Integrator">Integrator</a>&nbsp;wrapping&nbsp;SciPy's&nbsp;integrate.quad&nbsp;function<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;func&nbsp;(Callable):&nbsp;Callable&nbsp;function&nbsp;to&nbsp;integrate<br>
+&nbsp;&nbsp;&nbsp;&nbsp;x_min&nbsp;(u.Quantity):&nbsp;Lower&nbsp;bound&nbsp;of&nbsp;integral<br>
+&nbsp;&nbsp;&nbsp;&nbsp;x_max&nbsp;(u.Quantity):&nbsp;Upper&nbsp;bound&nbsp;of&nbsp;integral<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;u.Quantity:&nbsp;Integral&nbsp;result</span></dd></dl>
+
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>__abstractmethods__</strong> = frozenset()</dl>
+
+<hr>
+Data descriptors inherited from <a href="pysz.integrators.html#Integrator">Integrator</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><span class="code">dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</span></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><span class="code">list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</span></dd>
+</dl>
+</td></tr></table> <p>
+<table class="section">
+<tr class="decor title-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><a name="IntegratorTrapezoid">class <strong>IntegratorTrapezoid</strong></a>(<a href="pysz.integrators.html#Integrator">Integrator</a>)</td></tr>
+    
+<tr><td class="decor title-decor" rowspan=2><span class="code">&nbsp;&nbsp;&nbsp;</span></td>
+<td class="decor title-decor" colspan=2><span class="code"><a href="#Integrator">Integrator</a>&nbsp;wrapping&nbsp;numpy's&nbsp;trapz&nbsp;function<br>&nbsp;</span></td></tr>
+<tr><td>&nbsp;</td>
+<td class="singlecolumn"><dl><dt>Method resolution order:</dt>
+<dd><a href="pysz.integrators.html#IntegratorTrapezoid">IntegratorTrapezoid</a></dd>
+<dd><a href="pysz.integrators.html#Integrator">Integrator</a></dd>
+<dd><a href="abc.html#ABC">abc.ABC</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Static methods defined here:<br>
+<dl><dt><a name="IntegratorTrapezoid-__call__"><strong>__call__</strong></a>(func, x_min: astropy.units.quantity.Quantity, x_max: astropy.units.quantity.Quantity, num_pts: int = 1000, dist='lin', axis: int = 0, ndmin: int = 1)</dt><dd><span class="code"><a href="#Integrator">Integrator</a>&nbsp;wrapping&nbsp;numpy's&nbsp;trapz&nbsp;function<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;func&nbsp;(Callable):&nbsp;Callable&nbsp;function&nbsp;to&nbsp;integrate<br>
+&nbsp;&nbsp;&nbsp;&nbsp;x_min&nbsp;(u.Quantity):&nbsp;Lower&nbsp;bound&nbsp;of&nbsp;integral<br>
+&nbsp;&nbsp;&nbsp;&nbsp;x_max&nbsp;(u.Quantity):&nbsp;Upper&nbsp;bound&nbsp;of&nbsp;integral<br>
+&nbsp;&nbsp;&nbsp;&nbsp;num_pts&nbsp;(int,&nbsp;optional):&nbsp;Number&nbsp;of&nbsp;points&nbsp;to&nbsp;evaluate.&nbsp;Defaults&nbsp;to&nbsp;1000.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;dist&nbsp;(str,&nbsp;optional):&nbsp;Integral&nbsp;point&nbsp;distribution,&nbsp;can&nbsp;be&nbsp;'log'arithmic&nbsp;or&nbsp;'lin'ear.&nbsp;Defaults&nbsp;to&nbsp;'lin'.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;axis&nbsp;(int,&nbsp;optional):&nbsp;Axis&nbsp;to&nbsp;integrate&nbsp;along.&nbsp;Defaults&nbsp;to&nbsp;0.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;ndmin&nbsp;(int,&nbsp;optional):&nbsp;Number&nbsp;of&nbsp;dimensions&nbsp;to&nbsp;return&nbsp;in&nbsp;the&nbsp;array-like.&nbsp;Defaults&nbsp;to&nbsp;1.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;u.Quantity:&nbsp;Array-like&nbsp;of&nbsp;results,&nbsp;integrated&nbsp;along&nbsp;the&nbsp;"axis"&nbsp;dimension&nbsp;and&nbsp;with&nbsp;"ndmin"&nbsp;final&nbsp;dimensions</span></dd></dl>
+
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>__abstractmethods__</strong> = frozenset()</dl>
+
+<hr>
+Data descriptors inherited from <a href="pysz.integrators.html#Integrator">Integrator</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><span class="code">dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</span></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><span class="code">list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</span></dd>
+</dl>
+</td></tr></table></td></tr></table>
+</body></html>

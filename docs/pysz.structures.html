@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Python: module pysz.structures</title>
+</head><body>
+
+<table class="heading">
+<tr class="heading-text decor">
+<td class="title">&nbsp;<br><strong class="title"><a href="pysz.html" class="white">pysz</a>.structures</strong></td>
+<td class="extra"><a href=".">index</a><br><a href="file:..%5Cpysz%5Cstructures.py">..\pysz\structures.py</a></td></tr></table>
+    <p><span class="code">#&nbsp;This&nbsp;module&nbsp;includes&nbsp;the&nbsp;models&nbsp;of&nbsp;clusters&nbsp;and&nbsp;filaments&nbsp;derived&nbsp;from&nbsp;literature</span></p>
+<p>
+<table class="section">
+<tr class="decor pkg-content-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Modules</strong></td></tr>
+    
+<tr><td class="decor pkg-content-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><table><tr><td class="multicolumn"><a href="astropy.constants.html">astropy.constants</a><br>
+<a href="astropy.cosmology.html">astropy.cosmology</a><br>
+</td><td class="multicolumn"><a href="numpy.html">numpy</a><br>
+<a href="scipy.html">scipy</a><br>
+</td><td class="multicolumn"><a href="astropy.units.html">astropy.units</a><br>
+</td><td class="multicolumn"></td></tr></table></td></tr></table><p>
+<table class="section">
+<tr class="decor index-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Classes</strong></td></tr>
+    
+<tr><td class="decor index-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><dl>
+<dt class="heading-text"><a href="abc.html#ABC">abc.ABC</a>(<a href="builtins.html#object">builtins.object</a>)
+</dt><dd>
+<dl>
+<dt class="heading-text"><a href="pysz.structures.html#StructureModel">StructureModel</a>
+</dt><dd>
+<dl>
+<dt class="heading-text"><a href="pysz.structures.html#ClusterModel">ClusterModel</a>
+</dt><dd>
+<dl>
+<dt class="heading-text"><a href="pysz.structures.html#ClusterModelArnaud">ClusterModelArnaud</a>
+</dt></dl>
+</dd>
+<dt class="heading-text"><a href="pysz.structures.html#FilamentModel">FilamentModel</a>
+</dt><dd>
+<dl>
+<dt class="heading-text"><a href="pysz.structures.html#FilamentModelGheller">FilamentModelGheller</a>
+</dt></dl>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd>
+</dl>
+ <p>
+<table class="section">
+<tr class="decor title-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><a name="ClusterModel">class <strong>ClusterModel</strong></a>(<a href="pysz.structures.html#StructureModel">StructureModel</a>)</td></tr>
+    
+<tr><td class="decor title-decor" rowspan=2><span class="code">&nbsp;&nbsp;&nbsp;</span></td>
+<td class="decor title-decor" colspan=2><span class="code">Abstract&nbsp;cluster&nbsp;model,&nbsp;assuming&nbsp;a&nbsp;radial&nbsp;distribution<br>&nbsp;</span></td></tr>
+<tr><td>&nbsp;</td>
+<td class="singlecolumn"><dl><dt>Method resolution order:</dt>
+<dd><a href="pysz.structures.html#ClusterModel">ClusterModel</a></dd>
+<dd><a href="pysz.structures.html#StructureModel">StructureModel</a></dd>
+<dd><a href="abc.html#ABC">abc.ABC</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="ClusterModel-getClusterRadius"><strong>getClusterRadius</strong></a>(self, z: astropy.units.quantity.Quantity, M: astropy.units.quantity.Quantity)</dt><dd><span class="code">Abstract&nbsp;method&nbsp;to&nbsp;obtain&nbsp;the&nbsp;radius&nbsp;of&nbsp;a&nbsp;cluster&nbsp;at&nbsp;a&nbsp;certain&nbsp;redshift&nbsp;and&nbsp;mass<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;z&nbsp;(u.Quantity):&nbsp;Array-like&nbsp;of&nbsp;redshift&nbsp;values<br>
+&nbsp;&nbsp;&nbsp;&nbsp;M&nbsp;(u.Quantity):&nbsp;Array-like&nbsp;of&nbsp;mass&nbsp;values<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;u.Quantity:&nbsp;Array-like&nbsp;of&nbsp;cluster&nbsp;radii</span></dd></dl>
+
+<dl><dt><a name="ClusterModel-getElectronPressure"><strong>getElectronPressure</strong></a>(self, z: astropy.units.quantity.Quantity, M: astropy.units.quantity.Quantity, x)</dt><dd><span class="code">Abstract&nbsp;method&nbsp;to&nbsp;obtain&nbsp;the&nbsp;electron&nbsp;pressure&nbsp;of&nbsp;a&nbsp;cluster&nbsp;at&nbsp;a&nbsp;specific&nbsp;point&nbsp;along&nbsp;its&nbsp;radius<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;z&nbsp;(u.Quantity):&nbsp;Array-like&nbsp;of&nbsp;redshift&nbsp;values<br>
+&nbsp;&nbsp;&nbsp;&nbsp;M&nbsp;(u.Quantity):&nbsp;Array-like&nbsp;of&nbsp;mass&nbsp;values<br>
+&nbsp;&nbsp;&nbsp;&nbsp;x&nbsp;(float):&nbsp;Reduced&nbsp;radial&nbsp;distance&nbsp;from&nbsp;the&nbsp;center&nbsp;of&nbsp;the&nbsp;cluster,&nbsp;x&nbsp;=&nbsp;r/R_cluster<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;u.Quantity:&nbsp;Array-like&nbsp;of&nbsp;electron&nbsp;pressures</span></dd></dl>
+
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>__abstractmethods__</strong> = frozenset({'getClusterRadius', 'getElectronPressure'})</dl>
+
+<hr>
+Static methods inherited from <a href="pysz.structures.html#StructureModel">StructureModel</a>:<br>
+<dl><dt><a name="ClusterModel-logScaleByMass"><strong>logScaleByMass</strong></a>(alpha, beta, M)</dt><dd><span class="code">Static&nbsp;method&nbsp;to&nbsp;scale&nbsp;logarithmically&nbsp;by&nbsp;mass<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;alpha&nbsp;(float):&nbsp;Array-like&nbsp;of&nbsp;exponents&nbsp;to&nbsp;use<br>
+&nbsp;&nbsp;&nbsp;&nbsp;beta&nbsp;(float):&nbsp;Array-like&nbsp;of&nbsp;normalizations&nbsp;to&nbsp;use<br>
+&nbsp;&nbsp;&nbsp;&nbsp;M&nbsp;(u.Quantity):&nbsp;Mass&nbsp;to&nbsp;be&nbsp;scaled<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;u.Quantity:&nbsp;Scaled&nbsp;quantity,&nbsp;where&nbsp;Y&nbsp;=&nbsp;beta*(M/M_sun)**alpha,&nbsp;from&nbsp;[6]&nbsp;(Gheller&nbsp;et.&nbsp;al.)</span></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="pysz.structures.html#StructureModel">StructureModel</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><span class="code">dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</span></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><span class="code">list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</span></dd>
+</dl>
+</td></tr></table> <p>
+<table class="section">
+<tr class="decor title-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><a name="ClusterModelArnaud">class <strong>ClusterModelArnaud</strong></a>(<a href="pysz.structures.html#ClusterModel">ClusterModel</a>)</td></tr>
+    
+<tr><td class="decor title-decor" rowspan=2><span class="code">&nbsp;&nbsp;&nbsp;</span></td>
+<td class="decor title-decor" colspan=2><span class="code"><a href="#ClusterModelArnaud">ClusterModelArnaud</a>(cosmology_model:&nbsp;astropy.cosmology.flrw.base.FLRW)<br>
+&nbsp;<br>
+Cluster&nbsp;model&nbsp;based&nbsp;on&nbsp;REXCESS&nbsp;data&nbsp;in&nbsp;[21]&nbsp;(Arnaud&nbsp;et.&nbsp;al.)<br>&nbsp;</span></td></tr>
+<tr><td>&nbsp;</td>
+<td class="singlecolumn"><dl><dt>Method resolution order:</dt>
+<dd><a href="pysz.structures.html#ClusterModelArnaud">ClusterModelArnaud</a></dd>
+<dd><a href="pysz.structures.html#ClusterModel">ClusterModel</a></dd>
+<dd><a href="pysz.structures.html#StructureModel">StructureModel</a></dd>
+<dd><a href="abc.html#ABC">abc.ABC</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="ClusterModelArnaud-__init__"><strong>__init__</strong></a>(self, cosmology_model: astropy.cosmology.flrw.base.FLRW)</dt><dd><span class="code">Cluster&nbsp;model&nbsp;based&nbsp;on&nbsp;REXCESS&nbsp;data&nbsp;in&nbsp;[21]&nbsp;(Arnaud&nbsp;et.&nbsp;al.)<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;cosmology_model&nbsp;(cosmology.FLRW):&nbsp;Cosmology&nbsp;model&nbsp;to&nbsp;use&nbsp;to&nbsp;determine&nbsp;the&nbsp;critical&nbsp;density</span></dd></dl>
+
+<dl><dt><a name="ClusterModelArnaud-getClusterRadius"><strong>getClusterRadius</strong></a>(self, z: astropy.units.quantity.Quantity, M: astropy.units.quantity.Quantity)</dt><dd><span class="code">Calculates&nbsp;the&nbsp;R_500&nbsp;radius&nbsp;of&nbsp;a&nbsp;cluster,&nbsp;using&nbsp;data&nbsp;from&nbsp;[21]&nbsp;(Arnaud&nbsp;et.&nbsp;al.)<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;z&nbsp;(u.Quantity):&nbsp;Array-like&nbsp;of&nbsp;redshift&nbsp;values<br>
+&nbsp;&nbsp;&nbsp;&nbsp;M&nbsp;(u.Quantity):&nbsp;Array-like&nbsp;of&nbsp;masses<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;u.Quantity:&nbsp;Array-like&nbsp;of&nbsp;cluster&nbsp;radii,&nbsp;assuming&nbsp;a&nbsp;constant&nbsp;density&nbsp;sphere&nbsp;per&nbsp;Footnote&nbsp;1&nbsp;in&nbsp;[21]&nbsp;(Arnaud&nbsp;et.&nbsp;al.)</span></dd></dl>
+
+<dl><dt><a name="ClusterModelArnaud-getElectronPressure"><strong>getElectronPressure</strong></a>(self, z: astropy.units.quantity.Quantity, M: astropy.units.quantity.Quantity, x, P_0_h70=8.403, c_500=1.177, gamma=0.3081, alpha=1.051, beta=5.4905)</dt><dd><span class="code">Calculates&nbsp;the&nbsp;electron&nbsp;pressure&nbsp;at&nbsp;a&nbsp;specific&nbsp;radial&nbsp;distance,&nbsp;using&nbsp;data&nbsp;from&nbsp;[21]&nbsp;(Arnaud&nbsp;et.&nbsp;al.)<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;z&nbsp;(u.Quantity):&nbsp;Array-like&nbsp;of&nbsp;redshift&nbsp;values<br>
+&nbsp;&nbsp;&nbsp;&nbsp;M&nbsp;(u.Quantity):&nbsp;Array-like&nbsp;of&nbsp;masses<br>
+&nbsp;&nbsp;&nbsp;&nbsp;x&nbsp;(float):&nbsp;Reduced&nbsp;radial&nbsp;distance&nbsp;from&nbsp;the&nbsp;center&nbsp;of&nbsp;the&nbsp;cluster,&nbsp;x&nbsp;=&nbsp;r/R_500<br>
+&nbsp;&nbsp;&nbsp;&nbsp;P_0_h70&nbsp;(float,&nbsp;optional):&nbsp;Central&nbsp;electron&nbsp;pressure&nbsp;corrected&nbsp;by&nbsp;h_70.&nbsp;Defaults&nbsp;to&nbsp;8.403&nbsp;per&nbsp;Equation&nbsp;12&nbsp;from&nbsp;[21]&nbsp;(Arnaud&nbsp;et.&nbsp;al.).<br>
+&nbsp;&nbsp;&nbsp;&nbsp;c_500&nbsp;(float,&nbsp;optional):&nbsp;Correction&nbsp;factor&nbsp;to&nbsp;the&nbsp;cluster&nbsp;radius.&nbsp;Defaults&nbsp;to&nbsp;1.177&nbsp;per&nbsp;Equation&nbsp;12&nbsp;from&nbsp;[21]&nbsp;(Arnaud&nbsp;et.&nbsp;al.).<br>
+&nbsp;&nbsp;&nbsp;&nbsp;gamma&nbsp;(float,&nbsp;optional):&nbsp;Central&nbsp;slope&nbsp;of&nbsp;the&nbsp;cluster&nbsp;profile&nbsp;for&nbsp;x&nbsp;&lt;&lt;&nbsp;1/c_500.&nbsp;Defaults&nbsp;to&nbsp;0.3081&nbsp;per&nbsp;Equation&nbsp;12&nbsp;from&nbsp;[21]&nbsp;(Arnaud&nbsp;et.&nbsp;al.).<br>
+&nbsp;&nbsp;&nbsp;&nbsp;alpha&nbsp;(float,&nbsp;optional):&nbsp;Intermediate&nbsp;slope&nbsp;of&nbsp;the&nbsp;cluster&nbsp;profile&nbsp;for&nbsp;x&nbsp;~&nbsp;1/c_500.&nbsp;Defaults&nbsp;to&nbsp;1.0510&nbsp;per&nbsp;Equation&nbsp;12&nbsp;from&nbsp;[21]&nbsp;(Arnaud&nbsp;et.&nbsp;al.).<br>
+&nbsp;&nbsp;&nbsp;&nbsp;beta&nbsp;(float,&nbsp;optional):&nbsp;Outer&nbsp;slope&nbsp;of&nbsp;the&nbsp;cluster&nbsp;profile&nbsp;for&nbsp;x&nbsp;&gt;&gt;&nbsp;1/c_500.&nbsp;Defaults&nbsp;to&nbsp;5.4905&nbsp;per&nbsp;Equation&nbsp;12&nbsp;from&nbsp;[21]&nbsp;(Arnaud&nbsp;et.&nbsp;al.).<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;u.Quantity:&nbsp;Array-like&nbsp;of&nbsp;electron&nbsp;pressures,&nbsp;calculated&nbsp;using&nbsp;Equation&nbsp;13&nbsp;in&nbsp;[21]&nbsp;(Arnaud&nbsp;et.&nbsp;al.)</span></dd></dl>
+
+<dl><dt><a name="ClusterModelArnaud-universalProfile"><strong>universalProfile</strong></a>(self, x, P_0=8.403, c_500=1.177, gamma=0.3081, alpha=1.051, beta=5.4905)</dt><dd><span class="code">Internal&nbsp;function&nbsp;to&nbsp;calculate&nbsp;the&nbsp;universal&nbsp;profile&nbsp;from&nbsp;[21]&nbsp;(Arnaud&nbsp;et.&nbsp;al.)<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;x&nbsp;(float):&nbsp;Reduced&nbsp;radial&nbsp;distance&nbsp;from&nbsp;the&nbsp;center&nbsp;of&nbsp;the&nbsp;cluster,&nbsp;x&nbsp;=&nbsp;r/R_500<br>
+&nbsp;&nbsp;&nbsp;&nbsp;P_0&nbsp;(float,&nbsp;optional):&nbsp;Central&nbsp;electron&nbsp;pressure.&nbsp;Defaults&nbsp;to&nbsp;8.403&nbsp;per&nbsp;Equation&nbsp;12&nbsp;from&nbsp;[21]&nbsp;(Arnaud&nbsp;et.&nbsp;al.).<br>
+&nbsp;&nbsp;&nbsp;&nbsp;c_500&nbsp;(float,&nbsp;optional):&nbsp;Correction&nbsp;factor&nbsp;to&nbsp;the&nbsp;cluster&nbsp;radius.&nbsp;Defaults&nbsp;to&nbsp;1.177&nbsp;per&nbsp;Equation&nbsp;12&nbsp;from&nbsp;[21]&nbsp;(Arnaud&nbsp;et.&nbsp;al.).<br>
+&nbsp;&nbsp;&nbsp;&nbsp;gamma&nbsp;(float,&nbsp;optional):&nbsp;Central&nbsp;slope&nbsp;of&nbsp;the&nbsp;cluster&nbsp;profile&nbsp;for&nbsp;x&nbsp;&lt;&lt;&nbsp;1/c_500.&nbsp;Defaults&nbsp;to&nbsp;0.3081&nbsp;per&nbsp;Equation&nbsp;12&nbsp;from&nbsp;[21]&nbsp;(Arnaud&nbsp;et.&nbsp;al.).<br>
+&nbsp;&nbsp;&nbsp;&nbsp;alpha&nbsp;(float,&nbsp;optional):&nbsp;Intermediate&nbsp;slope&nbsp;of&nbsp;the&nbsp;cluster&nbsp;profile&nbsp;for&nbsp;x&nbsp;~&nbsp;1/c_500.&nbsp;Defaults&nbsp;to&nbsp;1.0510&nbsp;per&nbsp;Equation&nbsp;12&nbsp;from&nbsp;[21]&nbsp;(Arnaud&nbsp;et.&nbsp;al.).<br>
+&nbsp;&nbsp;&nbsp;&nbsp;beta&nbsp;(float,&nbsp;optional):&nbsp;Outer&nbsp;slope&nbsp;of&nbsp;the&nbsp;cluster&nbsp;profile&nbsp;for&nbsp;x&nbsp;&gt;&gt;&nbsp;1/c_500.&nbsp;Defaults&nbsp;to&nbsp;5.4905&nbsp;per&nbsp;Equation&nbsp;12&nbsp;from&nbsp;[21]&nbsp;(Arnaud&nbsp;et.&nbsp;al.).<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;u.Quantity:&nbsp;Array-like&nbsp;of&nbsp;universal&nbsp;profile&nbsp;values,&nbsp;calculated&nbsp;using&nbsp;Equation&nbsp;11&nbsp;from&nbsp;[21]&nbsp;(Arnaud&nbsp;et.&nbsp;al.)</span></dd></dl>
+
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>__abstractmethods__</strong> = frozenset()</dl>
+
+<hr>
+Static methods inherited from <a href="pysz.structures.html#StructureModel">StructureModel</a>:<br>
+<dl><dt><a name="ClusterModelArnaud-logScaleByMass"><strong>logScaleByMass</strong></a>(alpha, beta, M)</dt><dd><span class="code">Static&nbsp;method&nbsp;to&nbsp;scale&nbsp;logarithmically&nbsp;by&nbsp;mass<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;alpha&nbsp;(float):&nbsp;Array-like&nbsp;of&nbsp;exponents&nbsp;to&nbsp;use<br>
+&nbsp;&nbsp;&nbsp;&nbsp;beta&nbsp;(float):&nbsp;Array-like&nbsp;of&nbsp;normalizations&nbsp;to&nbsp;use<br>
+&nbsp;&nbsp;&nbsp;&nbsp;M&nbsp;(u.Quantity):&nbsp;Mass&nbsp;to&nbsp;be&nbsp;scaled<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;u.Quantity:&nbsp;Scaled&nbsp;quantity,&nbsp;where&nbsp;Y&nbsp;=&nbsp;beta*(M/M_sun)**alpha,&nbsp;from&nbsp;[6]&nbsp;(Gheller&nbsp;et.&nbsp;al.)</span></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="pysz.structures.html#StructureModel">StructureModel</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><span class="code">dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</span></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><span class="code">list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</span></dd>
+</dl>
+</td></tr></table> <p>
+<table class="section">
+<tr class="decor title-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><a name="FilamentModel">class <strong>FilamentModel</strong></a>(<a href="pysz.structures.html#StructureModel">StructureModel</a>)</td></tr>
+    
+<tr><td class="decor title-decor" rowspan=2><span class="code">&nbsp;&nbsp;&nbsp;</span></td>
+<td class="decor title-decor" colspan=2><span class="code">Abstract&nbsp;filament&nbsp;model,&nbsp;assuming&nbsp;a&nbsp;constant&nbsp;profile&nbsp;along&nbsp;its&nbsp;length<br>&nbsp;</span></td></tr>
+<tr><td>&nbsp;</td>
+<td class="singlecolumn"><dl><dt>Method resolution order:</dt>
+<dd><a href="pysz.structures.html#FilamentModel">FilamentModel</a></dd>
+<dd><a href="pysz.structures.html#StructureModel">StructureModel</a></dd>
+<dd><a href="abc.html#ABC">abc.ABC</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="FilamentModel-getFilamentLength"><strong>getFilamentLength</strong></a>(self, z: astropy.units.quantity.Quantity, M: astropy.units.quantity.Quantity)</dt><dd><span class="code">Abstract&nbsp;method&nbsp;to&nbsp;obtain&nbsp;the&nbsp;length&nbsp;of&nbsp;a&nbsp;filament&nbsp;at&nbsp;a&nbsp;certain&nbsp;redshift&nbsp;and&nbsp;mass<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;z&nbsp;(u.Quantity):&nbsp;Array-like&nbsp;of&nbsp;redshift&nbsp;values<br>
+&nbsp;&nbsp;&nbsp;&nbsp;M&nbsp;(u.Quantity):&nbsp;Array-like&nbsp;of&nbsp;mass&nbsp;values<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;u.Quantity:&nbsp;Array-like&nbsp;of&nbsp;filament&nbsp;lengths</span></dd></dl>
+
+<dl><dt><a name="FilamentModel-getFilamentRadius"><strong>getFilamentRadius</strong></a>(self, z: astropy.units.quantity.Quantity, M: astropy.units.quantity.Quantity)</dt><dd><span class="code">Abstract&nbsp;method&nbsp;to&nbsp;obtain&nbsp;the&nbsp;radius&nbsp;of&nbsp;a&nbsp;filament&nbsp;at&nbsp;a&nbsp;certain&nbsp;redshift&nbsp;and&nbsp;mass<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;z&nbsp;(u.Quantity):&nbsp;Array-like&nbsp;of&nbsp;redshift&nbsp;values<br>
+&nbsp;&nbsp;&nbsp;&nbsp;M&nbsp;(u.Quantity):&nbsp;Array-like&nbsp;of&nbsp;mass&nbsp;values<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;u.Quantity:&nbsp;Array-like&nbsp;of&nbsp;filament&nbsp;radii</span></dd></dl>
+
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>__abstractmethods__</strong> = frozenset({'getFilamentLength', 'getFilamentRadius'})</dl>
+
+<hr>
+Static methods inherited from <a href="pysz.structures.html#StructureModel">StructureModel</a>:<br>
+<dl><dt><a name="FilamentModel-logScaleByMass"><strong>logScaleByMass</strong></a>(alpha, beta, M)</dt><dd><span class="code">Static&nbsp;method&nbsp;to&nbsp;scale&nbsp;logarithmically&nbsp;by&nbsp;mass<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;alpha&nbsp;(float):&nbsp;Array-like&nbsp;of&nbsp;exponents&nbsp;to&nbsp;use<br>
+&nbsp;&nbsp;&nbsp;&nbsp;beta&nbsp;(float):&nbsp;Array-like&nbsp;of&nbsp;normalizations&nbsp;to&nbsp;use<br>
+&nbsp;&nbsp;&nbsp;&nbsp;M&nbsp;(u.Quantity):&nbsp;Mass&nbsp;to&nbsp;be&nbsp;scaled<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;u.Quantity:&nbsp;Scaled&nbsp;quantity,&nbsp;where&nbsp;Y&nbsp;=&nbsp;beta*(M/M_sun)**alpha,&nbsp;from&nbsp;[6]&nbsp;(Gheller&nbsp;et.&nbsp;al.)</span></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="pysz.structures.html#StructureModel">StructureModel</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><span class="code">dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</span></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><span class="code">list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</span></dd>
+</dl>
+</td></tr></table> <p>
+<table class="section">
+<tr class="decor title-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><a name="FilamentModelGheller">class <strong>FilamentModelGheller</strong></a>(<a href="pysz.structures.html#FilamentModel">FilamentModel</a>)</td></tr>
+    
+<tr><td class="decor title-decor" rowspan=2><span class="code">&nbsp;&nbsp;&nbsp;</span></td>
+<td class="decor title-decor" colspan=2><span class="code">Filament&nbsp;model&nbsp;based&nbsp;on&nbsp;data&nbsp;from&nbsp;the&nbsp;BOX100&nbsp;results&nbsp;in&nbsp;Tables&nbsp;2&nbsp;and&nbsp;3&nbsp;of&nbsp;[6]&nbsp;(Gheller&nbsp;et.&nbsp;al.)<br>&nbsp;</span></td></tr>
+<tr><td>&nbsp;</td>
+<td class="singlecolumn"><dl><dt>Method resolution order:</dt>
+<dd><a href="pysz.structures.html#FilamentModelGheller">FilamentModelGheller</a></dd>
+<dd><a href="pysz.structures.html#FilamentModel">FilamentModel</a></dd>
+<dd><a href="pysz.structures.html#StructureModel">StructureModel</a></dd>
+<dd><a href="abc.html#ABC">abc.ABC</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="FilamentModelGheller-getFilamentLength"><strong>getFilamentLength</strong></a>(self, z: astropy.units.quantity.Quantity, M: astropy.units.quantity.Quantity)</dt><dd><span class="code">Calculates&nbsp;the&nbsp;length&nbsp;of&nbsp;a&nbsp;filament&nbsp;using&nbsp;BOX100&nbsp;data&nbsp;from&nbsp;[6]&nbsp;(Gheller&nbsp;et.&nbsp;al.)<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;z&nbsp;(u.Quantity):&nbsp;Array-like&nbsp;of&nbsp;redshift&nbsp;values<br>
+&nbsp;&nbsp;&nbsp;&nbsp;M&nbsp;(u.Quantity):&nbsp;Array-like&nbsp;of&nbsp;masses<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;u.Quantity:&nbsp;Array-like&nbsp;of&nbsp;filament&nbsp;lengths</span></dd></dl>
+
+<dl><dt><a name="FilamentModelGheller-getFilamentRadius"><strong>getFilamentRadius</strong></a>(self, z: astropy.units.quantity.Quantity, M: astropy.units.quantity.Quantity)</dt><dd><span class="code">Calculates&nbsp;the&nbsp;characteristic&nbsp;radius&nbsp;of&nbsp;a&nbsp;filament&nbsp;assuming&nbsp;a&nbsp;constant&nbsp;density&nbsp;cylinder,&nbsp;as&nbsp;in&nbsp;[6]&nbsp;(Gheller&nbsp;et.&nbsp;al.)<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;z&nbsp;(u.Quantity):&nbsp;Array-like&nbsp;of&nbsp;redshift&nbsp;values<br>
+&nbsp;&nbsp;&nbsp;&nbsp;M&nbsp;(u.Quantity):&nbsp;Array-like&nbsp;of&nbsp;masses<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;u.Quantity:&nbsp;Array-like&nbsp;of&nbsp;filament&nbsp;radii</span></dd></dl>
+
+<dl><dt><a name="FilamentModelGheller-getFilamentVolume"><strong>getFilamentVolume</strong></a>(self, z: astropy.units.quantity.Quantity, M: astropy.units.quantity.Quantity)</dt><dd><span class="code">Calculates&nbsp;the&nbsp;volume&nbsp;of&nbsp;a&nbsp;filament&nbsp;using&nbsp;BOX100&nbsp;data&nbsp;from&nbsp;[6]&nbsp;(Gheller&nbsp;et.&nbsp;al.)<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;z&nbsp;(u.Quantity):&nbsp;Array-like&nbsp;of&nbsp;redshift&nbsp;values<br>
+&nbsp;&nbsp;&nbsp;&nbsp;M&nbsp;(u.Quantity):&nbsp;Array-like&nbsp;of&nbsp;masses<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;u.Quantity:&nbsp;Array-like&nbsp;of&nbsp;filament&nbsp;volumes</span></dd></dl>
+
+<dl><dt><a name="FilamentModelGheller-getTemperatureScaling"><strong>getTemperatureScaling</strong></a>(self, z: astropy.units.quantity.Quantity, M: astropy.units.quantity.Quantity, base_T: astropy.units.quantity.Quantity = &lt;Quantity 1001072.3 K&gt;)</dt><dd><span class="code">Calculates&nbsp;the&nbsp;correction&nbsp;factor&nbsp;for&nbsp;the&nbsp;electron&nbsp;pressure&nbsp;due&nbsp;to&nbsp;temperature&nbsp;scaling,&nbsp;using&nbsp;BOX100&nbsp;data&nbsp;from&nbsp;[6]&nbsp;(Gheller&nbsp;et.&nbsp;al.)<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;z&nbsp;(u.Quantity):&nbsp;Array-like&nbsp;of&nbsp;redshift&nbsp;values<br>
+&nbsp;&nbsp;&nbsp;&nbsp;M&nbsp;(u.Quantity):&nbsp;Array-like&nbsp;of&nbsp;masses<br>
+&nbsp;&nbsp;&nbsp;&nbsp;base_T&nbsp;(u.Quantity,&nbsp;optional):&nbsp;Temperature&nbsp;of&nbsp;a&nbsp;characteristic&nbsp;filament.&nbsp;Defaults&nbsp;to&nbsp;1001072.3*u.K,&nbsp;assuming&nbsp;a&nbsp;15&nbsp;Mpc&nbsp;characteristic&nbsp;filament&nbsp;at&nbsp;z=0,&nbsp;as&nbsp;calculated&nbsp;in&nbsp;TestGheller/test_base_temperature.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;u.Quantity:&nbsp;Array-like&nbsp;of&nbsp;temperature&nbsp;correction&nbsp;factors</span></dd></dl>
+
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>__abstractmethods__</strong> = frozenset()</dl>
+
+<dl><dt><strong>alpha_L</strong> = [0.381, 0.427, 0.44]</dl>
+
+<dl><dt><strong>alpha_T</strong> = [0.431, 0.375, 0.375]</dl>
+
+<dl><dt><strong>alpha_V</strong> = [0.824, 0.85, 0.864]</dl>
+
+<dl><dt><strong>beta_L</strong> = [-3.795, -4.21, -4.39]</dl>
+
+<dl><dt><strong>beta_T</strong> = [0.377, 1.035, 1.193]</dl>
+
+<dl><dt><strong>beta_V</strong> = [-9.525, -9.712, -9.99]</dl>
+
+<dl><dt><strong>z_data</strong> = [0.0, 0.5, 1.0]</dl>
+
+<hr>
+Static methods inherited from <a href="pysz.structures.html#StructureModel">StructureModel</a>:<br>
+<dl><dt><a name="FilamentModelGheller-logScaleByMass"><strong>logScaleByMass</strong></a>(alpha, beta, M)</dt><dd><span class="code">Static&nbsp;method&nbsp;to&nbsp;scale&nbsp;logarithmically&nbsp;by&nbsp;mass<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;alpha&nbsp;(float):&nbsp;Array-like&nbsp;of&nbsp;exponents&nbsp;to&nbsp;use<br>
+&nbsp;&nbsp;&nbsp;&nbsp;beta&nbsp;(float):&nbsp;Array-like&nbsp;of&nbsp;normalizations&nbsp;to&nbsp;use<br>
+&nbsp;&nbsp;&nbsp;&nbsp;M&nbsp;(u.Quantity):&nbsp;Mass&nbsp;to&nbsp;be&nbsp;scaled<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;u.Quantity:&nbsp;Scaled&nbsp;quantity,&nbsp;where&nbsp;Y&nbsp;=&nbsp;beta*(M/M_sun)**alpha,&nbsp;from&nbsp;[6]&nbsp;(Gheller&nbsp;et.&nbsp;al.)</span></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="pysz.structures.html#StructureModel">StructureModel</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><span class="code">dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</span></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><span class="code">list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</span></dd>
+</dl>
+</td></tr></table> <p>
+<table class="section">
+<tr class="decor title-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><a name="StructureModel">class <strong>StructureModel</strong></a>(<a href="abc.html#ABC">abc.ABC</a>)</td></tr>
+    
+<tr><td class="decor title-decor" rowspan=2><span class="code">&nbsp;&nbsp;&nbsp;</span></td>
+<td class="decor title-decor" colspan=2><span class="code">Abstract&nbsp;structure&nbsp;class,&nbsp;for&nbsp;use&nbsp;with&nbsp;the&nbsp;SZ&nbsp;calculators<br>&nbsp;</span></td></tr>
+<tr><td>&nbsp;</td>
+<td class="singlecolumn"><dl><dt>Method resolution order:</dt>
+<dd><a href="pysz.structures.html#StructureModel">StructureModel</a></dd>
+<dd><a href="abc.html#ABC">abc.ABC</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Static methods defined here:<br>
+<dl><dt><a name="StructureModel-logScaleByMass"><strong>logScaleByMass</strong></a>(alpha, beta, M)</dt><dd><span class="code">Static&nbsp;method&nbsp;to&nbsp;scale&nbsp;logarithmically&nbsp;by&nbsp;mass<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;alpha&nbsp;(float):&nbsp;Array-like&nbsp;of&nbsp;exponents&nbsp;to&nbsp;use<br>
+&nbsp;&nbsp;&nbsp;&nbsp;beta&nbsp;(float):&nbsp;Array-like&nbsp;of&nbsp;normalizations&nbsp;to&nbsp;use<br>
+&nbsp;&nbsp;&nbsp;&nbsp;M&nbsp;(u.Quantity):&nbsp;Mass&nbsp;to&nbsp;be&nbsp;scaled<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;u.Quantity:&nbsp;Scaled&nbsp;quantity,&nbsp;where&nbsp;Y&nbsp;=&nbsp;beta*(M/M_sun)**alpha,&nbsp;from&nbsp;[6]&nbsp;(Gheller&nbsp;et.&nbsp;al.)</span></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><span class="code">dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</span></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><span class="code">list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</span></dd>
+</dl>
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>__abstractmethods__</strong> = frozenset()</dl>
+
+</td></tr></table></td></tr></table>
+</body></html>

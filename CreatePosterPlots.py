@@ -9,10 +9,10 @@ import pandas as pd
 import time
 
 def getWigner3j(l1: u.Quantity, l2: u.Quantity, l3: u.Quantity):
-    w3j = np.empty(len(l1))
-    for i in range(len(l1)):
-        w3j[i] = wigner_3j(l1[i]*u.rad, l2[i]*u.rad, l3[i]*u.rad, 0, 0, 0)
-    return w3j
+  w3j = np.empty(len(l1))
+  for i in range(len(l1)):
+      w3j[i] = wigner_3j(l1[i]*u.rad, l2[i]*u.rad, l3[i]*u.rad, 0, 0, 0)
+  return w3j
 
 if __name__=='__main__':
   pool = mp.Pool(mp.cpu_count()) 
@@ -78,7 +78,7 @@ if __name__=='__main__':
   ang_power_spec = los_calc_clus.getLOSIntegral(l_ang, pool=pool)*1e12*l_ang*(l_ang+1)/(2*np.pi*u.rad)
 
   # Load data from Planck 2015 Fig. 15
-  planck_ang = pd.read_csv(r'.\tests\data\PlanckAngular.csv')
+  planck_ang = pd.read_csv(r'.\test\data\PlanckAngular.csv')
 
   # Flattened bispectrum
   flat_bispec = los_calc_clus.getLOSIntegral(l_bispec_flat, pool=pool)*\
@@ -86,7 +86,7 @@ if __name__=='__main__':
       getWigner3j(l_bispec_flat[:,0], l_bispec_flat[:,1], l_bispec_flat[:,2])
 
   # Load data from Planck 2015 Fig. 14c
-  planck_flat = pd.read_csv(r'.\tests\data\PlanckFlat.csv')
+  planck_flat = pd.read_csv(r'.\test\data\PlanckFlat.csv')
 
   # Close parallel pool
   pool.close()

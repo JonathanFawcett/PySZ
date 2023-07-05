@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Python: module pysz.imports</title>
+</head><body>
+
+<table class="heading">
+<tr class="heading-text decor">
+<td class="title">&nbsp;<br><strong class="title"><a href="pysz.html" class="white">pysz</a>.imports</strong></td>
+<td class="extra"><a href=".">index</a><br><a href="file:..%5Cpysz%5Cimports.py">..\pysz\imports.py</a></td></tr></table>
+    <p><span class="code">#&nbsp;Shared&nbsp;imports&nbsp;for&nbsp;all&nbsp;PySZ&nbsp;classes</span></p>
+<p>
+<table class="section">
+<tr class="decor pkg-content-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Modules</strong></td></tr>
+    
+<tr><td class="decor pkg-content-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><table><tr><td class="multicolumn"><a href="astropy.constants.html">astropy.constants</a><br>
+<a href="astropy.cosmology.html">astropy.cosmology</a><br>
+</td><td class="multicolumn"><a href="numpy.html">numpy</a><br>
+<a href="scipy.html">scipy</a><br>
+</td><td class="multicolumn"><a href="astropy.units.html">astropy.units</a><br>
+</td><td class="multicolumn"></td></tr></table></td></tr></table><p>
+<table class="section">
+<tr class="decor index-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Classes</strong></td></tr>
+    
+<tr><td class="decor index-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><dl>
+<dt class="heading-text"><a href="builtins.html#object">builtins.object</a>
+</dt><dd>
+<dl>
+<dt class="heading-text"><a href="abc.html#ABC">abc.ABC</a>
+</dt><dt class="heading-text"><a href="numba.misc.special.html#prange">numba.misc.special.prange</a>
+</dt></dl>
+</dd>
+</dl>
+ <p>
+<table class="section">
+<tr class="decor title-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><a name="ABC">class <strong>ABC</strong></a>(<a href="builtins.html#object">builtins.object</a>)</td></tr>
+    
+<tr><td class="decor title-decor" rowspan=2><span class="code">&nbsp;&nbsp;&nbsp;</span></td>
+<td class="decor title-decor" colspan=2><span class="code">Helper&nbsp;class&nbsp;that&nbsp;provides&nbsp;a&nbsp;standard&nbsp;way&nbsp;to&nbsp;create&nbsp;an&nbsp;<a href="#ABC">ABC</a>&nbsp;using<br>
+inheritance.<br>&nbsp;</span></td></tr>
+<tr><td>&nbsp;</td>
+<td class="singlecolumn">Data and other attributes defined here:<br>
+<dl><dt><strong>__abstractmethods__</strong> = frozenset()</dl>
+
+</td></tr></table> <p>
+<table class="section">
+<tr class="decor title-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><a name="prange">class <strong>prange</strong></a>(<a href="builtins.html#object">builtins.object</a>)</td></tr>
+    
+<tr><td class="decor title-decor" rowspan=2><span class="code">&nbsp;&nbsp;&nbsp;</span></td>
+<td class="decor title-decor" colspan=2><span class="code"><a href="#prange">prange</a>(*args)<br>
+&nbsp;<br>
+Provides&nbsp;a&nbsp;1D&nbsp;parallel&nbsp;iterator&nbsp;that&nbsp;generates&nbsp;a&nbsp;sequence&nbsp;of&nbsp;integers.<br>
+In&nbsp;non-parallel&nbsp;contexts,&nbsp;<a href="#prange">prange</a>&nbsp;is&nbsp;identical&nbsp;to&nbsp;range.<br>&nbsp;</span></td></tr>
+<tr><td>&nbsp;</td>
+<td class="singlecolumn">Static methods defined here:<br>
+<dl><dt><a name="prange-__new__"><strong>__new__</strong></a>(cls, *args)</dt><dd><span class="code">Create&nbsp;and&nbsp;return&nbsp;a&nbsp;new&nbsp;<a href="builtins.html#object">object</a>.&nbsp;&nbsp;See&nbsp;help(type)&nbsp;for&nbsp;accurate&nbsp;signature.</span></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><span class="code">dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</span></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><span class="code">list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</span></dd>
+</dl>
+</td></tr></table></td></tr></table><p>
+<table class="section">
+<tr class="decor functions-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Functions</strong></td></tr>
+    
+<tr><td class="decor functions-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><dl><dt><a name="-abstractmethod"><strong>abstractmethod</strong></a>(funcobj)</dt><dd><span class="code">A&nbsp;decorator&nbsp;indicating&nbsp;abstract&nbsp;methods.<br>
+&nbsp;<br>
+Requires&nbsp;that&nbsp;the&nbsp;metaclass&nbsp;is&nbsp;ABCMeta&nbsp;or&nbsp;derived&nbsp;from&nbsp;it.&nbsp;&nbsp;A<br>
+class&nbsp;that&nbsp;has&nbsp;a&nbsp;metaclass&nbsp;derived&nbsp;from&nbsp;ABCMeta&nbsp;cannot&nbsp;be<br>
+instantiated&nbsp;unless&nbsp;all&nbsp;of&nbsp;its&nbsp;abstract&nbsp;methods&nbsp;are&nbsp;overridden.<br>
+The&nbsp;abstract&nbsp;methods&nbsp;can&nbsp;be&nbsp;called&nbsp;using&nbsp;any&nbsp;of&nbsp;the&nbsp;normal<br>
+'super'&nbsp;call&nbsp;mechanisms.&nbsp;&nbsp;<a href="#-abstractmethod">abstractmethod</a>()&nbsp;may&nbsp;be&nbsp;used&nbsp;to&nbsp;declare<br>
+abstract&nbsp;methods&nbsp;for&nbsp;properties&nbsp;and&nbsp;descriptors.<br>
+&nbsp;<br>
+Usage:<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;class&nbsp;C(metaclass=ABCMeta):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@abstractmethod<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;def&nbsp;my_abstract_method(self,&nbsp;...):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...</span></dd></dl>
+ <dl><dt><a name="-jit"><strong>jit</strong></a>(signature_or_function=None, locals={}, cache=False, pipeline_class=None, boundscheck=None, **options)</dt><dd><span class="code">This&nbsp;decorator&nbsp;is&nbsp;used&nbsp;to&nbsp;compile&nbsp;a&nbsp;Python&nbsp;function&nbsp;into&nbsp;native&nbsp;code.<br>
+&nbsp;<br>
+Args<br>
+-----<br>
+signature_or_function:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;(optional)&nbsp;signature&nbsp;or&nbsp;list&nbsp;of&nbsp;signatures&nbsp;to&nbsp;be&nbsp;compiled.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;If&nbsp;not&nbsp;passed,&nbsp;required&nbsp;signatures&nbsp;will&nbsp;be&nbsp;compiled&nbsp;when&nbsp;the<br>
+&nbsp;&nbsp;&nbsp;&nbsp;decorated&nbsp;function&nbsp;is&nbsp;called,&nbsp;depending&nbsp;on&nbsp;the&nbsp;argument&nbsp;values.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;As&nbsp;a&nbsp;convenience,&nbsp;you&nbsp;can&nbsp;directly&nbsp;pass&nbsp;the&nbsp;function&nbsp;to&nbsp;be&nbsp;compiled<br>
+&nbsp;&nbsp;&nbsp;&nbsp;instead.<br>
+&nbsp;<br>
+locals:&nbsp;dict<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Mapping&nbsp;of&nbsp;local&nbsp;variable&nbsp;names&nbsp;to&nbsp;Numba&nbsp;types.&nbsp;Used&nbsp;to&nbsp;override&nbsp;the<br>
+&nbsp;&nbsp;&nbsp;&nbsp;types&nbsp;deduced&nbsp;by&nbsp;Numba's&nbsp;type&nbsp;inference&nbsp;engine.<br>
+&nbsp;<br>
+pipeline_class:&nbsp;type&nbsp;numba.compiler.CompilerBase<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;compiler&nbsp;pipeline&nbsp;type&nbsp;for&nbsp;customizing&nbsp;the&nbsp;compilation&nbsp;stages.<br>
+&nbsp;<br>
+options:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;For&nbsp;a&nbsp;cpu&nbsp;target,&nbsp;valid&nbsp;options&nbsp;are:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;nopython:&nbsp;bool<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Set&nbsp;to&nbsp;True&nbsp;to&nbsp;disable&nbsp;the&nbsp;use&nbsp;of&nbsp;PyObjects&nbsp;and&nbsp;Python&nbsp;API<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;calls.&nbsp;The&nbsp;default&nbsp;behavior&nbsp;is&nbsp;to&nbsp;allow&nbsp;the&nbsp;use&nbsp;of&nbsp;PyObjects<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;and&nbsp;Python&nbsp;API.&nbsp;Default&nbsp;value&nbsp;is&nbsp;False.<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;forceobj:&nbsp;bool<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Set&nbsp;to&nbsp;True&nbsp;to&nbsp;force&nbsp;the&nbsp;use&nbsp;of&nbsp;PyObjects&nbsp;for&nbsp;every&nbsp;value.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Default&nbsp;value&nbsp;is&nbsp;False.<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;looplift:&nbsp;bool<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Set&nbsp;to&nbsp;True&nbsp;to&nbsp;enable&nbsp;jitting&nbsp;loops&nbsp;in&nbsp;nopython&nbsp;mode&nbsp;while<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;leaving&nbsp;surrounding&nbsp;code&nbsp;in&nbsp;<a href="builtins.html#object">object</a>&nbsp;mode.&nbsp;This&nbsp;allows&nbsp;functions<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;to&nbsp;allocate&nbsp;NumPy&nbsp;arrays&nbsp;and&nbsp;use&nbsp;Python&nbsp;objects,&nbsp;while&nbsp;the<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tight&nbsp;loops&nbsp;in&nbsp;the&nbsp;function&nbsp;can&nbsp;still&nbsp;be&nbsp;compiled&nbsp;in&nbsp;nopython<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;mode.&nbsp;Any&nbsp;arrays&nbsp;that&nbsp;the&nbsp;tight&nbsp;loop&nbsp;uses&nbsp;should&nbsp;be&nbsp;created<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;before&nbsp;the&nbsp;loop&nbsp;is&nbsp;entered.&nbsp;Default&nbsp;value&nbsp;is&nbsp;True.<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;error_model:&nbsp;str<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;error-model&nbsp;affects&nbsp;divide-by-zero&nbsp;behavior.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Valid&nbsp;values&nbsp;are&nbsp;'python'&nbsp;and&nbsp;'numpy'.&nbsp;The&nbsp;'python'&nbsp;model<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;raises&nbsp;exception.&nbsp;&nbsp;The&nbsp;'numpy'&nbsp;model&nbsp;sets&nbsp;the&nbsp;result&nbsp;to<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*+/-inf*&nbsp;or&nbsp;*nan*.&nbsp;Default&nbsp;value&nbsp;is&nbsp;'python'.<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;inline:&nbsp;str&nbsp;or&nbsp;callable<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;inline&nbsp;option&nbsp;will&nbsp;determine&nbsp;whether&nbsp;a&nbsp;function&nbsp;is&nbsp;inlined<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;at&nbsp;into&nbsp;its&nbsp;caller&nbsp;if&nbsp;called.&nbsp;String&nbsp;options&nbsp;are&nbsp;'never'<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(default)&nbsp;which&nbsp;will&nbsp;never&nbsp;inline,&nbsp;and&nbsp;'always',&nbsp;which&nbsp;will<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;always&nbsp;inline.&nbsp;If&nbsp;a&nbsp;callable&nbsp;is&nbsp;provided&nbsp;it&nbsp;will&nbsp;be&nbsp;called&nbsp;with<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;the&nbsp;call&nbsp;expression&nbsp;node&nbsp;that&nbsp;is&nbsp;requesting&nbsp;inlining,&nbsp;the<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;caller's&nbsp;IR&nbsp;and&nbsp;callee's&nbsp;IR&nbsp;as&nbsp;arguments,&nbsp;it&nbsp;is&nbsp;expected&nbsp;to<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;Truthy&nbsp;as&nbsp;to&nbsp;whether&nbsp;to&nbsp;inline.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NOTE:&nbsp;This&nbsp;inlining&nbsp;is&nbsp;performed&nbsp;at&nbsp;the&nbsp;Numba&nbsp;IR&nbsp;level&nbsp;and&nbsp;is&nbsp;in<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;no&nbsp;way&nbsp;related&nbsp;to&nbsp;LLVM&nbsp;inlining.<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;boundscheck:&nbsp;bool&nbsp;or&nbsp;None<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Set&nbsp;to&nbsp;True&nbsp;to&nbsp;enable&nbsp;bounds&nbsp;checking&nbsp;for&nbsp;array&nbsp;indices.&nbsp;Out<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;of&nbsp;bounds&nbsp;accesses&nbsp;will&nbsp;raise&nbsp;IndexError.&nbsp;The&nbsp;default&nbsp;is&nbsp;to<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;not&nbsp;do&nbsp;bounds&nbsp;checking.&nbsp;If&nbsp;False,&nbsp;bounds&nbsp;checking&nbsp;is&nbsp;disabled,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;out&nbsp;of&nbsp;bounds&nbsp;accesses&nbsp;can&nbsp;produce&nbsp;garbage&nbsp;results&nbsp;or&nbsp;segfaults.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;However,&nbsp;enabling&nbsp;bounds&nbsp;checking&nbsp;will&nbsp;slow&nbsp;down&nbsp;typical<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;functions,&nbsp;so&nbsp;it&nbsp;is&nbsp;recommended&nbsp;to&nbsp;only&nbsp;use&nbsp;this&nbsp;flag&nbsp;for<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;debugging.&nbsp;You&nbsp;can&nbsp;also&nbsp;set&nbsp;the&nbsp;NUMBA_BOUNDSCHECK&nbsp;environment<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;variable&nbsp;to&nbsp;0&nbsp;or&nbsp;1&nbsp;to&nbsp;globally&nbsp;override&nbsp;this&nbsp;flag.&nbsp;The&nbsp;default<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value&nbsp;is&nbsp;None,&nbsp;which&nbsp;under&nbsp;normal&nbsp;execution&nbsp;equates&nbsp;to&nbsp;False,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;but&nbsp;if&nbsp;debug&nbsp;is&nbsp;set&nbsp;to&nbsp;True&nbsp;then&nbsp;bounds&nbsp;checking&nbsp;will&nbsp;be<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;enabled.<br>
+&nbsp;<br>
+Returns<br>
+--------<br>
+A&nbsp;callable&nbsp;usable&nbsp;as&nbsp;a&nbsp;compiled&nbsp;function.&nbsp;&nbsp;Actual&nbsp;compiling&nbsp;will&nbsp;be<br>
+done&nbsp;lazily&nbsp;if&nbsp;no&nbsp;explicit&nbsp;signatures&nbsp;are&nbsp;passed.<br>
+&nbsp;<br>
+Examples<br>
+--------<br>
+The&nbsp;function&nbsp;can&nbsp;be&nbsp;used&nbsp;in&nbsp;the&nbsp;following&nbsp;ways:<br>
+&nbsp;<br>
+1)&nbsp;<a href="#-jit">jit</a>(signatures,&nbsp;**targetoptions)&nbsp;-&gt;&nbsp;<a href="#-jit">jit</a>(function)<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Equivalent&nbsp;to:<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;d&nbsp;=&nbsp;dispatcher(function,&nbsp;targetoptions)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;signature&nbsp;in&nbsp;signatures:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;d.compile(signature)<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Create&nbsp;a&nbsp;dispatcher&nbsp;<a href="builtins.html#object">object</a>&nbsp;for&nbsp;a&nbsp;python&nbsp;function.&nbsp;&nbsp;Then,&nbsp;compile<br>
+&nbsp;&nbsp;&nbsp;&nbsp;the&nbsp;function&nbsp;with&nbsp;the&nbsp;given&nbsp;signature(s).<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Example:<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@<a href="#-jit">jit</a>("int32(int32,&nbsp;int32)")<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;def&nbsp;foo(x,&nbsp;y):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;x&nbsp;+&nbsp;y<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@<a href="#-jit">jit</a>(["int32(int32,&nbsp;int32)",&nbsp;"float32(float32,&nbsp;float32)"])<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;def&nbsp;bar(x,&nbsp;y):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;x&nbsp;+&nbsp;y<br>
+&nbsp;<br>
+2)&nbsp;<a href="#-jit">jit</a>(function,&nbsp;**targetoptions)&nbsp;-&gt;&nbsp;dispatcher<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Create&nbsp;a&nbsp;dispatcher&nbsp;function&nbsp;<a href="builtins.html#object">object</a>&nbsp;that&nbsp;specializes&nbsp;at&nbsp;call&nbsp;site.<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Examples:<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@jit<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;def&nbsp;foo(x,&nbsp;y):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;x&nbsp;+&nbsp;y<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@<a href="#-jit">jit</a>(nopython=True)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;def&nbsp;bar(x,&nbsp;y):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;x&nbsp;+&nbsp;y</span></dd></dl>
+ <dl><dt><a name="-njit"><strong>njit</strong></a>(*args, **kws)</dt><dd><span class="code">Equivalent&nbsp;to&nbsp;<a href="#-jit">jit</a>(nopython=True)<br>
+&nbsp;<br>
+See&nbsp;documentation&nbsp;for&nbsp;jit&nbsp;function/decorator&nbsp;for&nbsp;full&nbsp;description.</span></dd></dl>
+</td></tr></table><p>
+<table class="section">
+<tr class="decor data-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Data</strong></td></tr>
+    
+<tr><td class="decor data-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><strong>__all__</strong> = ['ABC', 'abstractmethod', 'np', 'scipy', 'cosmology', 'constants', 'u', 'njit', 'jit', 'prange']</td></tr></table>
+</body></html>
